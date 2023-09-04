@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MovieLink, MovieList, Title } from './Home.styled';
-
+import { getTrending } from '../../Api/apiService';
 import { Loader } from 'components/Loader/Loader';
-import { getTrending } from 'Api/apiService';
 
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
@@ -13,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true);
     getTrending().then(data => {
-      setTrendMovies(data.resulsts);
+      setTrendMovies(data.results);
       setIsLoading(false);
     });
   }, []);
@@ -34,5 +33,4 @@ const Home = () => {
     </main>
   );
 };
-
 export default Home;
