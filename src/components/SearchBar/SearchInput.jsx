@@ -4,7 +4,7 @@ const SearchInput = () => (
   <Input
     type="text"
     name="movieName"
-    pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+    pattern="^[a-zA-Zа-яА-Я0-9]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я0-9]*)*$"
     title="May contain only letters, apostrophe, dash and spaces. For example moon"
     required
     autoComplete="off"

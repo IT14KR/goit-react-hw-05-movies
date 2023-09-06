@@ -14,13 +14,15 @@ import {
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 const MovieDetails = () => {
-  const [movieDetail, setMovieDetail] = useState({});
+  const [movieDetail, setMovieDetail] = useState(null);
   const location = useLocation();
   const { movieId } = useParams();
 
   useEffect(() => {
     getMovieDetails(movieId).then(data => setMovieDetail(data));
   }, [movieId]);
+
+  if (!movieDetail) return;
 
   const { original_title, overview, genres, poster_path, vote_average } =
     movieDetail;

@@ -11,14 +11,16 @@ const Reviews = () => {
 
   return (
     <ul>
-      {reviewsList.length > 0
-        ? reviewsList.map(({ author, content, id }) => (
-            <li key={id}>
-              <h3>{author}</h3>
-              <p>{content}</p>
-            </li>
-          ))
-        : "Sorry, we don't have any review for this movie"}
+      {reviewsList.length > 0 ? (
+        reviewsList.map(({ author, content, id }) => (
+          <li key={id}>
+            <h3>{author}</h3>
+            <p>{content}</p>
+          </li>
+        ))
+      ) : (
+        <li>Sorry, we don't have any review for this movie</li>
+      )}
     </ul>
   );
 };
